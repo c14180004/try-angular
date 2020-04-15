@@ -3,13 +3,15 @@
   Start editing to see some magic happen :)
 </p>
 <div>
-  input a: <input [(ngModel)] = "a" type="text">
+  input a: <input [(ngModel)] = "a" type="text" id = "input1">
 </div>
 <div>
-  input b: <input [(ngModel)] = "b" typw="text">
+  input b: <input [(ngModel)] = "b" typw="text" id = "input2">
 </div>
 <p>
   <button (click) = "hitung(a,b)">hitung</button>
+  <br/>
+  <button (click) = "hapus()">hapus</button>
 </p>
 <div>
   hitung = {{pangkat}}

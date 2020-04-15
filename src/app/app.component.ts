@@ -14,9 +14,18 @@ export class AppComponent  {
   co = 1;
   co2 = 0;
   hasil = [];
+  hapus(){
+    var a = document.getElementById("input1");
+    var b = document.getElementById("input2");
+    a.innerHTML = "";
+    b.innerHTML = "";
+    this. pangkat = 0;
+    this.hasil = [];
+  }
   hitung(a,b){
     this.pangkat = Math.pow(a,b);
     this.co2 = parseInt(b);
+    this.co = 1;
     if(this.pangkat % 2 == 0){
       this.show = true;
       for(var i = 0;i<b;i++){
@@ -29,20 +38,19 @@ export class AppComponent  {
       }
     }
     else{
-      
       this.show = false;
       while(this.co<=parseInt(a) || this.co2>0){
         this.temphasil2 = ""
-        if(this.co2>0){
-        for(var j = 0;j<this.co2;j++){
-          this.temphasil2 = this.temphasil2 + "*";
-        }
+          if(this.co2>0){
+          for(var j = 0;j<this.co2;j++){
+            this.temphasil2 = this.temphasil2 + "*";
+          }
         }
         this.co2 = this.co2 - 1;
-        if(this.co<= parseInt(a)){
-        for(var j = 0;j<this.co;j++){
-          this.temphasil2 = this.temphasil2 + "O";
-        }
+          if(this.co<= parseInt(a)){
+          for(var j = 0;j<this.co;j++){
+            this.temphasil2 = this.temphasil2 + "O";
+          }
         }
         this.co = this.co + 1;
         this.hasil.push(this.temphasil2);
