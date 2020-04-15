@@ -13,33 +13,39 @@ export class AppComponent  {
   temphasil2 = "";
   co = 1;
   co2 = 0;
+  a;
+  b;
   hasil = [];
   hapus(){
-    var a = document.getElementById("input1");
-    var b = document.getElementById("input2");
-    a.innerHTML = "";
-    b.innerHTML = "";
+    document.getElementById("input1").innerText = "";
+    document.getElementById("input2").innerText = "";
+    this.a = null;
+    this.b = null;
     this. pangkat = 0;
     this.hasil = [];
   }
-  hitung(a,b){
-    this.pangkat = Math.pow(a,b);
-    this.co2 = parseInt(b);
+  hitung(al,bl){
+    this.a = al;
+    this.b = bl;
+    this.hasil = [];
+    this.temphasil = "";
+    this.pangkat = Math.pow(this.a,this.b);
+    this.co2 = parseInt(this.b);
     this.co = 1;
     if(this.pangkat % 2 == 0){
       this.show = true;
-      for(var i = 0;i<b;i++){
+      for(var i = 0;i<this.b;i++){
         this.temphasil = this.temphasil + "*";
       }
       this.hasil.push(this.temphasil);
-      for(var i = parseInt(b);i<=this.pangkat;i++){
+      for(var i = parseInt(this.b);i<=this.pangkat;i++){
         this.temphasil = this.temphasil + "*";
         this.hasil.push(this.temphasil);
       }
     }
     else{
       this.show = false;
-      while(this.co<=parseInt(a) || this.co2>0){
+      while(this.co<=parseInt(this.a) || this.co2>0){
         this.temphasil2 = ""
           if(this.co2>0){
           for(var j = 0;j<this.co2;j++){
@@ -47,7 +53,7 @@ export class AppComponent  {
           }
         }
         this.co2 = this.co2 - 1;
-          if(this.co<= parseInt(a)){
+          if(this.co<= parseInt(this.a)){
           for(var j = 0;j<this.co;j++){
             this.temphasil2 = this.temphasil2 + "O";
           }
