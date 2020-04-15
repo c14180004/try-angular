@@ -2,3 +2,30 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+<div>
+  input a: <input [(ngModel)] = "a" type="text">
+</div>
+<div>
+  input b: <input [(ngModel)] = "b" typw="text">
+</div>
+<p>
+  <button (click) = "hitung(a,b)">hitung</button>
+</p>
+<div>
+  hitung = {{pangkat}}
+</div>
+<ng-template
+  *ngIf = "show; then showBlock ; else notShowBlock">
+</ng-template>
+
+<ng-template #showBlock>
+  <div *ngFor = "let a of hasil">
+    {{a}}
+  </div>
+</ng-template>
+<ng-template #notShowBlock>
+  <div *ngFor = "let a of hasil">
+    {{a}}
+  </div>
+</ng-template>
+
