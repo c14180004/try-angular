@@ -38,7 +38,7 @@ export class AppComponent  {
         this.temphasil = this.temphasil + "*";
       }
       this.hasil.push(this.temphasil);
-      for(var i = parseInt(this.b);i<=this.pangkat;i++){
+      for(var i = parseInt(this.b);i<this.pangkat;i++){
         this.temphasil = this.temphasil + "*";
         this.hasil.push(this.temphasil);
       }
